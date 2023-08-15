@@ -8,7 +8,7 @@ let {title, description, installation, usage, license, github, email} = await in
         {
             type: 'input',
             name: 'title',
-            message: 'Enter the title of your project'
+            message: 'Enter the title of your project: '
         },
          {
             type: 'input',
@@ -34,7 +34,7 @@ let {title, description, installation, usage, license, github, email} = await in
         {
             type: 'input',
             name: 'github',
-            message: 'Enter your github profile name'
+            message: 'Enter your github profile name: '
         },
         {
             type: 'input',

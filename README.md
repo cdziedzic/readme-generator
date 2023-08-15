@@ -1,7 +1,9 @@
-#  Readme Generator
+#  Professional Readme Generator
 
 ## Project Description
-A professional readme generator
+An app to generate a professional README.md file based on a template. The user is prompted to enter info about various aspects of their application.
+
+Preview video: https://watch.screencastify.com/v/91lztu2zOYH9zSy4kO4q
 
 ## Table of contents
 
@@ -14,10 +16,10 @@ A professional readme generator
 
 
 ### Installation
-node index.mjs in console
+enter node.mjs into the terminal
 
 ### Usage 
-A readme for challenges or projects
+Readme creation for projects and challenges
 
 ### License
 
