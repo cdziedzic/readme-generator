@@ -1,6 +1,8 @@
 import inquirer from "inquirer";
 import fs from "fs/promises";
 
+
+// ask the user for the information needed to create the readme
 let {title, description, installation, usage, license, github, email} = await inquirer
     .prompt([
         {
@@ -22,12 +24,12 @@ let {title, description, installation, usage, license, github, email} = await in
          {
             type: 'input',
             name: 'installation',
-            message: 'Please write any installation instructions for your project'
+            message: 'Please write any installation instructions for your project: '
         },
          {
             type: 'input',
             name: 'usage',
-            message: 'Provide instructions and/or examples for use'
+            message: 'Provide an example of the how the program should be used: '
         },
         {
             type: 'input',
@@ -43,7 +45,9 @@ let {title, description, installation, usage, license, github, email} = await in
 
     ])
 
-let readmeText = `#  ${title}
+
+//Text of the reademe file that will be written into the document
+    let readmeText = `#  ${title}
 
 ## Project Description
 ${description}
@@ -55,7 +59,7 @@ ${description}
 - [License](#license)
 - [Contributing](#contributing)
 - [Tests](#tests)
-- [Questions](#questions?)
+- [Questions](#questions)
 
 
 ### Installation
@@ -69,22 +73,24 @@ ${usage}
 ${generateLicense(license)}
 
 ### Contributing
-List of any collaborators will go here
+Add any collaborator information here
 
 ### Tests
 Any tests of the program can be entered into this area
 
-### Questions?
+### Questions
 
 [My github](github.com/${github})
 
 E-mail: ${email}
 
 `
-
+//create the readme.MD file
     fs.writeFile('README.md',readmeText )
 
-function generateLicense(license) {
+
+//check which license the user selected and link to the badge image
+    function generateLicense(license) {
 if (license === 'MIT') {
     return "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)"
 }
